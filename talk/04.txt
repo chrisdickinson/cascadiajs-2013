@@ -1,0 +1,36 @@
+I'm talking about how jQuery changed the JavaScript world. Select
+using CSS selectors; consume HTML to produce DOM objects. Regardless of how you feel
+about jQuery-the-library, the concept is solid.
+
+CSS works because it has some nice properties.
+
+Selectors are easy to transform into a matching function -- a function
+that takes a node, and given that node, its parents, and its previous
+siblings, can determine whether or not the node matches. That is to
+say, you can't select "ahead" of the current node in any sense -- one
+couldn't write a selector that said "give me all paragraphs who are 
+succeeded by divs." You could write the inverse, though -- "give me
+all divs preceded by paragraphs." This happens to match the information
+we have available to us when we traverse the AST "depth first."
+
+Selectors are also very terse -- relations between nodes can be codified
+into one of four operations: direct siblings, indirect siblings, direct
+parents, and indirect parents. Direct siblings say whether or not the
+immediate sibling of this node matches the next selector; indirect siblings
+match if *any* of the preceding sibling match. The same goes for parent
+selectors. It's best to read these selectors from right to left -- that's
+how they're executed. If the first test passes, then traverse to the next
+test, all the way to the left of the selector.
+
+They have the ability to represent and check a given node's *type* and its
+*attributes*. They have the ability (via psuedoclasses) to check other positional
+information about the node (for instance, "first-child", "nth-child", etc).
+Commas represent alternatives. If any selector in a group of comma-delimited 
+selectors match, the selector group as a whole matches.
+
+CSS4 brings us useful features as well: :any/:matches lets us borrow the comma
+behavior for individual nodes -- does this node match any of these selectors?
+And subject selectors -- denoted by placing an exclamation point before a
+selector group -- further enhance our ability to select nodes by letting us
+return an ancestor node as a result when the selector matches.
+

@@ -1,0 +1,32 @@
+hi my name is Chris Dickinson and i work 
+at Urban Airship in sunny Portland, Oregon.
+i'd like to talk to you today about how we interact with our code.
+
+this is some javascript -- this is how we usually see our code.
+but there's treachery afoot! this isn't really javascript, it's
+text. more than that, it's text that's represented as a series 
+of bytes on a hard drive. and that's how we usually interact
+with our code, yes?
+
+we search it by entering text and finding lines of other text
+that match that text. sometimes, if we're tricky, we'll pull
+out a regex and set that to happily nom on our bytes and tell
+us where things are -- or change text from one form to another.
+
+but, this is not just text. it's a series of tokens; it's a series
+of tokens assembled into a tree, it's a tree that represents instructions,
+it's a set of instructions that elicit actions from a virtual machine, 
+it's a potential series of actions that cause electrons to hurdle from
+one side of a motherboard to another to manipulate a register... ad
+infinitum. this text represents many things. each of these views
+on this code are true. each view is a different facet of what this
+text represents, a different level of abstraction.
+
+what we do when we type text and search text and replace text is a bit
+like changing the shape of a shadow to change the shape of a sculpture.
+
+each level of abstraction carries information that the others don't --
+each of them is better at expressing certain things than others.
+
+today, I'd like to talk to you about working with your code on a different
+layer of abstraction -- at the AST level.

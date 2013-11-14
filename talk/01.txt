@@ -1,0 +1,45 @@
+"AST" stands for "Abstract Syntax Tree." It is the second
+derivation from our text -- the first derivation being "tokens".
+
+---------- start the animation
+
+To get an AST, we first run lexical analysis over our input
+text to get tokens, then we consume those tokens with a parser
+that creates a directed tree of nodes.
+
+----------- click
+
+Tokens represent "types of words", just like most languages have nouns, verbs, adverbs; Common
+token types are identifiers, keywords, and operators. The purpose
+of tokenization is to move from a level of abstraction where the world is 
+all bytes to one where groups of bytes exist, with more semantic meaning.
+
+----------- click
+
+We then parse our tokens into a tree of nodes. There are many different
+approaches to this; if you're curious about how to build a machine
+that does this I would highly recommend Douglas Crockford's article on
+TDOP. This stands for "Top Down Operator Precedence." It'll show you how to 
+tokenize and parse a language *very* close to JavaScript, in JavaScript.
+
+In this demonstration we're watching as tokens get consumed by the parser
+to create an AST. Note how we move from innermost, deepest nodes, to outermost and
+shallowest. This is called "depth first" traversal.
+
+Each node has a *type* -- what structure it represents in the language. 
+
+Most nodes have a parent node, with whom they have a labeled relationship.
+For example, "If Statements" have a child node called "test". This represents
+the code between the parentheses of the "If" statement. They also have a child
+node called a "consequent", which is a block or statement that represents the
+"if true" case.
+
+Some nodes -- like the aforementioned "if" node -- are statements with no return 
+value but occasionally represent special meaning; 
+others are expressions, which do return a value.
+
+At this level of abstraction, we lose comments but gain an ability to talk
+about the overall structure of our code. Further, the actual text contained
+within the identifiers -- the user-specified variables, members, et cetera --
+no longer matter quite so much -- two textually different programs
+can produce identically shaped ASTs. A great example of this is minification.

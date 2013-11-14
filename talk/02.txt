@@ -1,0 +1,24 @@
+In JavaScript, for JavaScript, you don't necessarily need to worry
+about writing your own parser. There are many implementations of JavaScript
+parsers in JavaScript -- this is one of the benefits of having 
+such a relatively "small" language.
+
+The two leading tools for getting an AST are Esprima and Acorn. Acorn
+can edge out Esprima in parse speed in certain circumstances -- but it's
+important to note that they both produce the same output. They both
+produce "Parser API" formatted nodes, which is well-documented on the
+Mozilla Developer Network wiki.
+
+Another tool that makes generating and manipulating ASTs easier is called
+"falafel." It takes a string of JavaScript input and calls a function for
+every node that it visits in depth first order. That function has the chance
+to replace that node's source. It's a great API. Thanks, Substack! It runs
+Esprima under the hood.
+
+A bit of a tangential note: many of you are probably aware of this, but it
+bears mentioning, from within JavaScript you can get the original source of
+a function by coercing it to a string -- by adding a string to the function or
+calling `toString` on the function. You can use the `Function` constructor
+(or other, safer means like iframe sandboxing) to reconstitute a function from
+a string. This is a really awesome property of JS, and it lets us dynamically
+change running code.

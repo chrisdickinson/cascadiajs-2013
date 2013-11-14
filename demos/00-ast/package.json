@@ -1,0 +1,21 @@
+{
+  "name": "illustrate",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "esprima": "~1.0.4",
+    "d3": "~3.3.9",
+    "acorn": "~0.4.2",
+    "brfs": "~0.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Dickinson <chris@neversaw.us>",
+  "license": "MIT",
+  "scripts": {
+    "start": "beefy index.js --open 9966 -- -t brfs"
+  }
+}

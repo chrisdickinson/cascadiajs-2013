@@ -1,0 +1,27 @@
+{
+  "name": "illustrate",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "esprima": "~1.0.4",
+    "d3": "~3.3.9",
+    "acorn": "~0.4.2",
+    "brfs": "~0.0.8",
+    "through": "~2.3.4",
+    "cssauron-falafel": "~1.1.0",
+    "bops": "~0.1.0",
+    "tape": "~2.1.0",
+    "plate": "~1.3.0",
+    "mocha": "~1.14.0",
+    "jsl": "0.1.0",
+    "beefy": "~0.4.5",
+    "browserify": "~2.35.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "beefy index.js --open 9966 -- -t brfs"
+  },
+  "author": "Chris Dickinson <chris@neversaw.us>",
+  "license": "MIT"
+}

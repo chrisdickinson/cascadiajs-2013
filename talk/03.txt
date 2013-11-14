@@ -1,0 +1,30 @@
+Once we have an AST, how can we use it?
+
+I personally believe that JavaScript programmers are, amongst their other admirable
+traits, uniquely prepared to grapple with the challenge of working with
+ASTs, for a couple of reasons.
+
+First, there's a tree structure that very nearly every JavaScript developer
+has at least a more than passing familiarity with:
+
+----- click
+
+The DOM. The DOM is a big part of why I think JavaScript developers will
+experience a more gradual learning curve when approaching ASTs. The DOM
+is many things: it is a tree, it is nested, there are nodes, they have siblings,
+they have parents, they have types, and it is complicated. 
+
+You may or may not remember how bad DOM programming used to be.
+I won't delve too far into it, but suffice to say, it was bad enough that
+JavaScript tried to ease the pain by introducing the "with" statement.
+
+So yeah, it was pretty bad.
+
+Further, the DOM, like the bytes of our JavaScript function versus the 
+AST it represents, has a textual counterpart in HTML. HTML creates 
+the DOM, and the DOM can produce or accept new HTML to 
+produce new DOM structures.
+
+JavaScript as a language and as a community tried many approaches, and
+eventually one style clicked: query the tree structure using CSS selectors, and
+*consume* what you *output*.

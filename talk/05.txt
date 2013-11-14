@@ -1,0 +1,17 @@
+I wrote a module called "CSSauron" that aims to make it
+easy to leverage these nice properties against any arbitrary
+tree structure. It has a simple API: you give it a definition
+of how to find various properties on your particular flavor of
+node, and it gives you back a selector compiler.
+
+Prebaked CSSauron modules exist for GLSL, JSON, 
+XML, HTML, and, of course, JavaScript.
+
+The node types become tag selectors -- lowercased and abbreviated,
+usually, while their relation to their parent node becomes their
+"CSS class". Going back to the "if" statement example, "if"'s have
+a child node called "test" -- to write a selector that only passes
+for nodes that are the "test" of an "if" node, we could write:
+
+    if > .test
+
